@@ -23,7 +23,7 @@ main {
     height: 100vh;
     display: flex;
     flex-direction: column;
-    padding-top: 20%;
+    padding-top: 15%;
 }
 
 </style>

@@ -1,21 +1,17 @@
-# whered-my-money-go-fe
+# Where'd my Money Go?
 
-> A Vue.js project
+An app for consolidating all your bills in one place, organizing them by due dates and allow you to check them off when they're paid.
 
-## Build Setup
+### Limited Use
 
-``` bash
-# install dependencies
-npm install
+App is only a prototype with 3 demo usernames:
+- Keith
+- Kaitlin
+- Brandon
 
-# serve with hot reload at localhost:8080
-npm run dev
+## Future Implementations
 
-# build for production with minification
-npm run build
+- Build fully authenticated login with the ability to create and edit users.
+- Have 'paid' functionality automatically bump due-date to next month's due date
 
-# build for production and view the bundle analyzer report
-npm run build --report
-```
 
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
