@@ -41,12 +41,12 @@
 
 <script>
 export default {
-props: ['userId', 'getBills'],
+props: ['userIdNumber', 'getBills'],
 data () {
     return {
         showForm: false,
         form: {
-            userId: this.userId,
+            userId: Number,
             name: '',
             amount: null,
             dueDate: null,
@@ -54,10 +54,14 @@ data () {
         }
     }
 },
+async mounted () {
+        this.userId = await this.userIdNumber
+},
 methods: {
     onSubmit() {
         const POST_API_URL = 'https://sheltered-meadow-21600.herokuapp.com/api/bills/'
         const data = this.form
+        data.userId = this.userIdNumber
         fetch(POST_API_URL, {
             method: "POST",
             headers: {

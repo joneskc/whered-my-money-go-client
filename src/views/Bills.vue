@@ -2,7 +2,7 @@
     <div class="container">
         <h1>{{userName}}'s Bills</h1>
         <NewBillForm
-            :userId="userId"
+            :userIdNumber="userId"
             :getBills="getBills"/>
         <Bill
             v-for="bill in bills.data"
