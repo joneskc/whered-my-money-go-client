@@ -68,21 +68,11 @@ methods: {
         })
         .then(res => res.json())
         .then(res => {
+            console.log(res)
             this.getBills()
             this.showForm = false
-            this.clearForm()
-            console.log('it posted')
         })
     },
-    clearForm() {
-        this.form = {
-            userId: this.userId,
-            name: '',
-            amount: null,
-            dueDate: null,
-            status: 'Unpaid'
-        }
-    }
 }
 }
 </script>
