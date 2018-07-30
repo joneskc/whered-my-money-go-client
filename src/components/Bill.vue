@@ -87,9 +87,9 @@ methods: {
     position: initial;
 }
 .bill {
-    margin-bottom: 2em;
+    margin-bottom: 15px;
 }
 button {
-    margin-bottom: 2em;
+    margin-bottom: 15px;
 }
 </style>

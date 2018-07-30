@@ -46,16 +46,13 @@ data () {
     return {
         showForm: false,
         form: {
-            userId: Number,
+            userId: null,
             name: '',
             amount: null,
             dueDate: null,
             status: 'Unpaid'
         }
     }
-},
-async mounted () {
-        this.userId = await this.userIdNumber
 },
 methods: {
     onSubmit() {
@@ -64,15 +61,12 @@ methods: {
         data.userId = this.userIdNumber
         fetch(POST_API_URL, {
             method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
+            headers: new Headers({"content-type": "application/json"}),
             body: JSON.stringify(data),
             mode: 'cors',
         })
         .then(res => res.json())
-        .then(res => {
-            console.log(res)
+        .then(data => {
             this.getBills()
             this.showForm = false
         })
@@ -83,7 +77,7 @@ methods: {
 
 <style>
 form {
-    padding-bottom: 2em;
+    padding-bottom: 15px;
 }
 
 </style>

@@ -30,5 +30,8 @@ export default {
 .container {
     width: 50%;
 }
+b-button {
+    margin-bottom: 15px;
+}
 
 </style>
