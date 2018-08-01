@@ -2,7 +2,7 @@
 
 An app for consolidating all your bills in one place, organizing them by due dates and allow you to check them off when they're paid.
 
-(./whered-my-money-go-fe/WMMG-screenshot.png)
+(./WMMG-screenshot.png)
 
 ### Limited Use
 
