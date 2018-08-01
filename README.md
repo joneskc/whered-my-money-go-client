@@ -2,6 +2,8 @@
 
 An app for consolidating all your bills in one place, organizing them by due dates and allow you to check them off when they're paid.
 
+(/Users/keithjones/Desktop/G-Projects/whered-my-money-go-fe/WMMG-screenshot.png)
+
 ### Limited Use
 
 App is only a prototype with 3 demo usernames:
