@@ -41,16 +41,14 @@ export default {
       fetch(USERS_API_URL)
         .then(res => res.json())
         .then(res => {
-          this.user = res
+          this.user = res.data[0]
         })
-        .then(console.log(this.user))
+        .then(data => {
+          this.getUsersBills()
+        })
     },
-    // getUserId() {
-    //   this.userId = this.users.data.filter(user => user.userName === this.userInput)[0].id
-    //   this.getBills()
-    // },
     getUsersBills() {
-      const BILLS_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${this.user[0].id}`
+      const BILLS_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${this.user.id}`
       fetch(BILLS_API_URL)
       .then(res => res.json())
       .then(res => {
