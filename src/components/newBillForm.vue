@@ -3,7 +3,7 @@
         <b-button
             @click="showForm = !showForm"
             variant="primary">Add a Bill</b-button>
-        <b-form @submit="onSubmit" v-if="showForm">
+        <b-form @submit="createBill()" v-if="showForm">
             <b-form-group id="name"
                             label="Bill Name:"
                             label-for="name">
@@ -41,12 +41,11 @@
 
 <script>
 export default {
-props: ['userIdNumber', 'getBills'],
+props: ['userIdNumber', 'getUsersBills'],
 data () {
     return {
         showForm: false,
         form: {
-            userId: null,
             name: '',
             amount: null,
             dueDate: null,
@@ -55,7 +54,7 @@ data () {
     }
 },
 methods: {
-    onSubmit() {
+    createBill() {
         const POST_API_URL = 'https://sheltered-meadow-21600.herokuapp.com/api/bills/'
         const data = this.form
         data.userId = this.userIdNumber
@@ -67,7 +66,7 @@ methods: {
         })
         .then(res => res.json())
         .then(data => {
-            this.getBills()
+            this.getUsersBills()
             this.showForm = false
         })
     },

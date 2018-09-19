@@ -3,7 +3,7 @@
     <Header />
     <router-view
       :userName="userInput"
-      :userId="userId"
+      :userId="user.id"
       :getUser="getUser"
       :bills="bills"
       :getUsersBills="getUsersBills"/>
