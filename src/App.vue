@@ -6,7 +6,7 @@
       :userId="userId"
       :getUser="getUser"
       :bills="bills"
-      :getBills="getBills"/>
+      :getUsersBills="getUsersBills"/>
     <Footer />
   </div>
 </template>
@@ -26,7 +26,7 @@ export default {
       userInput: null,
       userId: null,
       username: null,
-      users: [],
+      user: [],
       bills: [],
       billId: null
     }
@@ -34,23 +34,23 @@ export default {
   methods: {
     getUser(username) {
         this.userInput = username
-        this.getUsers()
+        this.getUserByUsername()
     },
-    getUsers() {
-      const USERS_API_URL = 'https://sheltered-meadow-21600.herokuapp.com/api/users/'
+    getUserByUsername() {
+      const USERS_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/users/${this.userInput}`
       fetch(USERS_API_URL)
         .then(res => res.json())
         .then(res => {
-          this.users = res
-          this.getUserId()
+          this.user = res
         })
+        .then(console.log(this.user))
     },
-    getUserId() {
-      this.userId = this.users.data.filter(user => user.userName === this.userInput)[0].id
-      this.getBills()
-    },
-    getBills() {
-      const BILLS_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${this.userId}`
+    // getUserId() {
+    //   this.userId = this.users.data.filter(user => user.userName === this.userInput)[0].id
+    //   this.getBills()
+    // },
+    getUsersBills() {
+      const BILLS_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${this.user[0].id}`
       fetch(BILLS_API_URL)
       .then(res => res.json())
       .then(res => {

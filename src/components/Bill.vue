@@ -31,7 +31,7 @@
 <script>
 export default {
 name: 'bill',
-props: ['bill', 'getBills', 'userId', 'paidUnpaid'],
+props: ['bill', 'getUsersBills', 'userId', 'paidUnpaid'],
 data () {
     return {
         showUpdateForm: false,

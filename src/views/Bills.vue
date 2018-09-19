@@ -9,7 +9,7 @@
             :bill="bill"
             :key="bill.id"
             :userId="userId"
-            :getBills="getBills"/>
+            :getUsersBills="getUsersBills"/>
         <b-button
             id="chartButton"
             @click="onClick"
@@ -33,7 +33,7 @@ export default {
         NewBillForm,
         paymentChart
     },
-    props: ['userName', 'userId', 'bills', 'getBills'],
+    props: ['userName', 'userId', 'bills', 'getUsersBills'],
     data() {
         return {
             openChart: false,

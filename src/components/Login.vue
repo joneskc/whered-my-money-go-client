@@ -12,7 +12,7 @@
                 to="/bills"
                 type="submit"
                 size="sm"
-                class="my-2 my-sm-0"
+                class="mt-2"
                 @click.prevent="getUser(username)">
                 Login</b-button>
         </b-form>

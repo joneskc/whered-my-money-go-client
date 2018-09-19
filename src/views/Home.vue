@@ -11,7 +11,7 @@ import Login from '@/components/Login'
 
 export default {
     name: 'Home',
-    props: ['getBills', 'userId', 'getUser', 'username'],
+    props: ['getUsersBills', 'userId', 'getUser', 'username'],
     components: {
         Login
     },
