@@ -3,7 +3,7 @@
         <h1>{{userName}}'s Bills</h1>
         <NewBillForm
             :userIdNumber="userId"
-            :getBills="getBills"/>
+            :getUsersBills="getUsersBills"/>
         <Bill
             v-for="bill in bills.data"
             :bill="bill"

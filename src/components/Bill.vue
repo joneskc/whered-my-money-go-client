@@ -9,12 +9,8 @@
             <p>{{bill.status}}</p>
         </b-list-group-item>
         <b-list-group-item class="flex-column align-items-start bg-primary">
-            <b-button
-                @click="showUpdateForm = !showUpdateForm"
-                variant="secondary">Update</b-button>
-            <b-button @click.prevent="deleteBill(bill)" size="small" variant="danger">
-                Delete
-            </b-button>
+            <b-button @click="showUpdateForm = !showUpdateForm" variant="secondary">Update</b-button>
+            <b-button @click.prevent="deleteBill(bill)" size="small" variant="danger">Delete</b-button>
             <b-form @submit.prevent="updateBill(bill)" v-if="showUpdateForm">
                 <b-form-group label="status">
                     <b-form-radio-group v-model="updateForm.status"
@@ -44,10 +40,6 @@ data () {
         ],
         deletedBill: null,
         updateForm: {
-            userId: this.userId,
-            name: this.bill.name,
-            amount: this.bill.amount,
-            dueDate: this.bill.dueDate,
             status: this.bill.status.value
         }
     }
@@ -61,11 +53,11 @@ methods: {
             headers: new Headers({"content-type": "application/json"})
         })
         .then(data => {
-            this.getBills();
+            this.getUsersBills();
         })
     },
-    updateBill(bill) {
-        const UPDATE_BILL_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${bill.id}`
+    updateBill(updatedBill) {
+        const UPDATE_BILL_API_URL = `https://sheltered-meadow-21600.herokuapp.com/api/bills/${updatedBill.id}`
         const data = this.updateForm
         fetch(UPDATE_BILL_API_URL, {
             method: "PUT",
@@ -74,7 +66,7 @@ methods: {
         })
         .then(response => response.json())
         .then(data => {
-            this.getBills()
+            this.getUsersBills()
             this.showUpdateForm = false
         })
     },
