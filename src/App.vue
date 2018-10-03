@@ -25,7 +25,7 @@ export default {
     return {
       userInput: null,
       userId: null,
-      username: null,
+      username: String,
       user: [],
       bills: [],
       billId: null

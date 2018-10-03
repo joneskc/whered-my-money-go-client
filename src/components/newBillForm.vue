@@ -8,7 +8,7 @@
                             label="Bill Name:"
                             label-for="name">
                 <b-form-input id="name"
-                            type="string"
+                            type= "string"
                             v-model="form.name"
                             required
                             placeholder="Enter bill name">
