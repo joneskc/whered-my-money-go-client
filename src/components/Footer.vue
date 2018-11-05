@@ -2,7 +2,7 @@
     <footer>
         <small>Keith Jones</small>
         <small>GitHub Source Code: <a href="https://github.com/joneskc/whered-my-money-go-client" target="_blank">here</a></small>
-        <small>2018</small>
+        <small>©2018</small>
     </footer>
 </template>
 
